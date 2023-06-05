@@ -2,5 +2,7 @@
 <publish-info>
   <server id="Tomcat v10.0 Server at localhost (2)" path="publish3.dat"/>
   <server id="Taskly LocalHost" path="publish0.dat"/>
+  <server id="Tomcat v10.0 Server at localhost (3)" path="publish4.dat"/>
+  <server id="Tomcat v10.0 Server at localhost (4)" path="publish5.dat"/>
   <server id="Tomcat v10.0 Server at localhost" path="publish2.dat"/>
 </publish-info>
