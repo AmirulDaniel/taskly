@@ -28,46 +28,29 @@
         color: #fff;
       }
       
-  		.status-frame {
-   		 display: flex;
-   		 flex-direction: column;
-    	 justify-content: center;
-    	 align-items: center;
-    	 width: 33.33%;
-    	 height: 280px;
-   		 background-color: white;
-    	 border: 1px solid #ccc;
-    	 border-radius: 30px;
-    	 margin: 10px;
-		}
-		
-    	.status-title {
-   		 font-size: 18px;
+      .status-title {
+   		 font-size: 1vw;
     	 font-weight: bold;
     	 margin-bottom: 10px;
 		}
+  
+.card{
+    padding: 1.5em .5em .5em;
+    border-radius: 2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
 
-		.status-content {
-        display: flex;
-    	justify-content: center;
-    	align-items: center;
-		}
+.circle {
+  width: 16vw;
+  height: 16vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-		.status-circle {
-    	border-radius: 50%;
-    	width: 150px;
-    	height: 150px;
-    	display: flex;
-    	justify-content: center;
-    	align-items: center;
-   		color: white;
-   	 	font-weight: bold;
-    	font-size: 50px;
-		}
-   		  
-   		.numberCircle {
-   		 border-radius: 50%;
-   		 width: 36px;
-   		 height: 36px;
-   		 padding: 8px;   		 
+.number{
+	font-size:5vw;
 }
