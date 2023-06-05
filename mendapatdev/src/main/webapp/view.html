@@ -20,7 +20,9 @@
 <body>
 	<nav class="navbar fixed-top bg-body-tertiary nav-box">
 		<div class="row row-content">
-			<h2><a href="dashboard.html">Taskly</a></h2>
+			<h2>
+				<a href="dashboard.html">Taskly</a>
+			</h2>
 		</div>
 		<div class="btn-container-user">
 			<div class="dropdown-center">
@@ -86,7 +88,7 @@
 								</li>
 								<li class="list-inline-item">
 									<button class="btn btn-danger btn-sm rounded-0" type="button"
-										onclick="location.href=''" data-toggle="tooltip"
+										data-bs-toggle="modal" data-bs-target="#exampleModal" data-toggle="tooltip"
 										data-placement="top" title="Delete">
 										<i class="fa fa-trash"></i>
 									</button>
@@ -125,7 +127,7 @@
 								</li>
 								<li class="list-inline-item">
 									<button class="btn btn-danger btn-sm rounded-0" type="button"
-										onclick="location.href=''" data-toggle="tooltip"
+										data-bs-toggle="modal" data-bs-target="#exampleModal" data-toggle="tooltip"
 										data-placement="top" title="Delete">
 										<i class="fa fa-trash"></i>
 									</button>
@@ -165,7 +167,7 @@
 								</li>
 								<li class="list-inline-item">
 									<button class="btn btn-danger btn-sm rounded-0" type="button"
-										onclick="location.href=''" data-toggle="tooltip"
+										data-bs-toggle="modal" data-bs-target="#exampleModal" data-toggle="tooltip"
 										data-placement="top" title="Delete">
 										<i class="fa fa-trash"></i>
 									</button>
@@ -205,8 +207,8 @@
 								</li>
 								<li class="list-inline-item">
 									<button class="btn btn-danger btn-sm rounded-0" type="button"
-										onclick="location.href=''" data-toggle="tooltip"
-										data-placement="top" title="Delete">
+										data-bs-toggle="modal" data-bs-target="#exampleModal"
+										data-toggle="tooltip" data-placement="top" title="Delete">
 										<i class="fa fa-trash"></i>
 									</button>
 								</li>
@@ -218,7 +220,25 @@
 
 		</div>
 	</section>
-
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Delete Confirmation</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">Do you want to delete task?</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-danger">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end Modal -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
 		integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
