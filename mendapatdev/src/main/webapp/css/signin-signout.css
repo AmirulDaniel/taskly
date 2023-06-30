@@ -1,0 +1,37 @@
+/*index*/
+.signinText {
+	text-align: center;
+	color: #3D65E8;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.container-form{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formBox {
+	padding: 20px;
+	border: 1px solid #DEDEDE;
+	filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 20px;
+	margin: 10%;
+}
+
+.indexFormtext {
+	line-height: 29px;
+}
+
+.subButton {
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 30px;
+	padding: 5px 30px;
+}
+
+.signupText {
+	padding: 10px;
+	text-align: center;
+}
