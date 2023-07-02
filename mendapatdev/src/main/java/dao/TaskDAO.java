@@ -4,6 +4,9 @@ import java.sql.*;
 import java.util.*;
 
 import model.TaskModel;
+import model.OverdueModel;
+import model.OngoingModel;
+import model.CompletedModel;
 
 public class TaskDAO {
 	private String jdbcURL = "jdbc:mysql://localhost/taskly";
@@ -16,7 +19,10 @@ public class TaskDAO {
 	private static final String SELECT_TASK_BY_USERID = "SELECT * FROM task WHERE userid = ?";
 	private static final String DELETE_TASK_SQL = "DELETE FROM task WHERE taskid = ?";
 	private static final String UPDATE_TASK_SQL = "UPDATE task SET name = ?, duedate = ?, description= ?, statusid= ?, categoryid= ?, userid = ? WHERE taskid = ?";
-
+	private static final String SELECT_COUNT_OVERDUE = "SELECT COUNT(taskid) FROM task WHERE statusid = 3002 AND duedate < SYSDATE() AND userid = ?";
+	private static final String SELECT_COUNT_NOTDONE = "SELECT COUNT(taskid) FROM task WHERE statusid = 3002 AND duedate > SYSDATE() AND userid = ?";
+	private static final String SELECT_COUNT_DONE = "SELECT COUNT(taskid) FROM task WHERE statusid = 3001 AND userid = ?";
+	
 	public TaskDAO() {}
 	
 	protected Connection getConnection() {
@@ -134,6 +140,72 @@ public class TaskDAO {
 			rowUpdated = statement.executeUpdate() > 0;
 		}
 		return rowUpdated;
+	}
+	
+	public OverdueModel countOverdue(int userid) {
+		OverdueModel task = null;
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_COUNT_OVERDUE);) {
+			preparedStatement.setInt(1, userid);
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int countOverdue = rs.getInt("COUNT(taskid)");
+				task = new OverdueModel(countOverdue);
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return task;
+	}
+	
+	public OngoingModel countOngoing(int userid) {
+		OngoingModel task = null;
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_COUNT_NOTDONE);) {
+			preparedStatement.setInt(1, userid);
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int countOngoing = rs.getInt("COUNT(taskid)");
+				task = new OngoingModel(countOngoing);
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return task;
+	}
+	
+	public CompletedModel countCompleted(int userid) {
+		CompletedModel task = null;
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_COUNT_DONE);) {
+			preparedStatement.setInt(1, userid);
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int countCompleted = rs.getInt("COUNT(taskid)");
+				task = new CompletedModel(countCompleted);
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return task;
 	}
 
 	private void printSQLException(SQLException ex) {

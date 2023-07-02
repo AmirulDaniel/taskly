@@ -38,7 +38,19 @@
 						<div
 							class="status-content d-flex flex-column justify-content-center align-items-center">
 							<span class="circle" style="background-color: #f4a9a4;"> <span
-								class="number" style="color: #ed6e69;">3</span>
+								class="number" style="color: #ed6e69;"><c:out value='${overdue.countOverdue}'/></span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="status-frame overdue shadow p-3s mb-5 bg-white rounded"
+						style="height: 300px;">
+						<div class="status-title">Ongoing Tasks</div>
+						<div
+							class="status-content d-flex flex-column justify-content-center align-items-center">
+							<span class="circle" style="background-color: #dfedf5;"> <span
+								class="number" style="color: #64aacf;"><c:out value='${ongoing.countOngoing}'/></span>
 							</span>
 						</div>
 					</div>
@@ -46,23 +58,11 @@
 				<div class="col-sm-4">
 					<div class="status-frame overdue shadow p-3 mb-5 bg-white rounded"
 						style="height: 300px;">
-						<div class="status-title">Task Due For Completion</div>
+						<div class="status-title">Completed Tasks</div>
 						<div
 							class="status-content d-flex flex-column justify-content-center align-items-center">
 							<span class="circle" style="background-color: #dfedf5;"> <span
-								class="number" style="color: #64aacf;">1</span>
-							</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="status-frame overdue shadow p-3 mb-5 bg-white rounded"
-						style="height: 300px;">
-						<div class="status-title">Task completed</div>
-						<div
-							class="status-content d-flex flex-column justify-content-center align-items-center">
-							<span class="circle" style="background-color: #dfedf5;"> <span
-								class="number" style="color: #64aacf;">2</span>
+								class="number" style="color: #64aacf;"><c:out value='${completed.countCompleted}'/></span>
 							</span>
 						</div>
 					</div>
