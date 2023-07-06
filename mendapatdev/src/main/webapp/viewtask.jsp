@@ -34,11 +34,13 @@
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-center">
 				<h1 class="pt-5 mt-5 title">My Tasks</h1>
+				<form action="searchtask" method="post">
 				<div class="input-group pt-5 mt-5 search">
 					<span class="input-group-text" id="basic-addon1"><i
 						class="fa-solid fa-magnifying-glass"></i></span> <input type="text"
-						class="form-control" placeholder="Search By Name">
+						class="form-control" name="namesearch" placeholder="Search By Name">
 				</div>
+				</form>
 			</div>
 			<table class="table">
 				<thead>

@@ -22,6 +22,7 @@ public class TaskDAO {
 	private static final String SELECT_COUNT_OVERDUE = "SELECT COUNT(taskid) FROM task WHERE statusid = 3002 AND duedate < SYSDATE() AND userid = ?";
 	private static final String SELECT_COUNT_NOTDONE = "SELECT COUNT(taskid) FROM task WHERE statusid = 3002 AND duedate > SYSDATE() AND userid = ?";
 	private static final String SELECT_COUNT_DONE = "SELECT COUNT(taskid) FROM task WHERE statusid = 3001 AND userid = ?";
+	private static final String SELECT_TASK_BY_SEARCHING = "SELECT * FROM task WHERE userid = ? AND name LIKE ?";
 	
 	public TaskDAO() {}
 	
@@ -206,6 +207,38 @@ public class TaskDAO {
 			printSQLException(e);
 		}
 		return task;
+	}
+	
+	public List <TaskModel> searchTask(int userid, String namesearch) {
+
+		// using try-with-resources to avoid closing resources (boiler plate code)
+		List<TaskModel> tasks = new ArrayList<>();
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TASK_BY_SEARCHING);) {
+			String namesearched = "%" + namesearch + "%";
+			preparedStatement.setInt(1, userid);
+			preparedStatement.setString(2, namesearched);
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int taskid = rs.getInt("taskid");
+				String name = rs.getString("name");
+				String duedate = rs.getString("duedate");
+				String description = rs.getString("description");
+				int statusid = rs.getInt("statusid");
+				int categoryid = rs.getInt("categoryid");
+				tasks.add(new TaskModel(taskid, name, duedate, description, statusid, categoryid, userid));
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return tasks;
 	}
 
 	private void printSQLException(SQLException ex) {
