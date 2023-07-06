@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Taskly LocalHost-config" deployDir="wtpwebapps" hostname="localhost" id="Taskly LocalHost" name="Taskly LocalHost" runtime-id="Apache Tomcat v10.0" server-type="org.eclipse.jst.server.tomcat.100" server-type-id="org.eclipse.jst.server.tomcat.100" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
-    <list key="modules" value0="mendapatdev::org.eclipse.jst.jee.server:mendapatdev::jst.web::5.0"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.0 Server at localhost" name="Tomcat v10.0 Server at localhost" runtime-id="Apache Tomcat v10.0" server-type="org.eclipse.jst.server.tomcat.100" server-type-id="org.eclipse.jst.server.tomcat.100" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
-    <list key="modules" value0="mendapatdev::org.eclipse.jst.jee.server:mendapatdev::jst.web::5.0"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.0 Server at localhost (2)-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.0 Server at localhost (2)" name="Tomcat v10.0 Server at localhost (2)" runtime-id="Apache Tomcat v10.0" server-type="org.eclipse.jst.server.tomcat.100" server-type-id="org.eclipse.jst.server.tomcat.100" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
-    <list key="modules" value0="mendapatdev::org.eclipse.jst.jee.server:mendapatdev::jst.web::5.0"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.0 Server at localhost (3)-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.0 Server at localhost (3)" name="Tomcat v10.0 Server at localhost (3)" runtime-id="Apache Tomcat v10.0" server-type="org.eclipse.jst.server.tomcat.100" server-type-id="org.eclipse.jst.server.tomcat.100" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
-    <list key="modules" value0="mendapatdev::org.eclipse.jst.jee.server:mendapatdev::jst.web::5.0"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.0 Server at localhost (4)-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.0 Server at localhost (4)" name="Tomcat v10.0 Server at localhost (4)" runtime-id="Apache Tomcat v10.0" server-type="org.eclipse.jst.server.tomcat.100" server-type-id="org.eclipse.jst.server.tomcat.100" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers2/Tomcat v10.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.0 Server at localhost" name="Tomcat v10.0 Server at localhost" runtime-id="Taskly" server-type="org.eclipse.jst.server.tomcat.100" server-type-id="org.eclipse.jst.server.tomcat.100" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
     <list key="modules" value0="mendapatdev::org.eclipse.jst.jee.server:mendapatdev::jst.web::5.0"/>
   </server>
 </servers>

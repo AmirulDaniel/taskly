@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+.navbar{
+	padding: 1% 5% !important;
+	margin: 0% !important;
+}
+
+.dropdown-menu{
+	min-width: auto !important;
+}
+
+.form-group {
+	margin-top: 20px;
+}
+
+.button-class {
+	text-align: center !important;
+	border: 1px !important;
+	margin-top: 20px !important;
+}
