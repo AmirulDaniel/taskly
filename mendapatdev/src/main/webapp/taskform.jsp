@@ -58,8 +58,8 @@
 		<fieldset class="form-group">
 			<label>Task Status:</label>
 				<select class="form-select" name="statusid" required="required">
-					<c:if test="${task.statusid == 3001}"><option style="display:none" value="<c:out value='${task.categoryid}'/>">Done</c:if>
-					<c:if test="${task.statusid == 3002}"><option style="display:none" value="<c:out value='${task.categoryid}'/>">Ongoing</c:if>
+					<c:if test="${task.statusid == 3001}"><option style="display:none" value="3001">Done</c:if>
+					<c:if test="${task.statusid == 3002}"><option style="display:none" value="3002">Ongoing</c:if>
 					<c:if test="${task == null}"><option disabled selected value>-- select an option --</option></c:if>
 					<option value="3001">Done</option>
 					<option value="3002">Ongoing</option>
@@ -73,8 +73,8 @@
 		<fieldset class="form-group">
 			<label>Task Category:</label>
 				<select class="form-select" name="categoryid" required="required">
-					<c:if test="${task.categoryid == 4001}"><option style="display:none" value="<c:out value='${task.categoryid}'/>">Entertainment</c:if>
-					<c:if test="${task.categoryid == 4002}"><option style="display:none" value="<c:out value='${task.categoryid}'/>">Work</c:if>
+					<c:if test="${task.categoryid == 4001}"><option style="display:none" value="4001">Entertainment</c:if>
+					<c:if test="${task.categoryid == 4002}"><option style="display:none" value="4002">Work</c:if>
 					<c:if test="${task == null}"><option disabled selected value>-- select an option --</option></c:if>
 					<option value="4001">Entertainment</option>
 					<option value="4002">Work</option>
