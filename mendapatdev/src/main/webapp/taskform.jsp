@@ -35,7 +35,7 @@
     </ul>
 </nav>
 
-	<div class="container">
+	<div class="container mt-3">
 		<h1>
 			<c:if test="${task != null}">Edit My Task</c:if>
 			<c:if test="${task == null}">Add New Task</c:if>
