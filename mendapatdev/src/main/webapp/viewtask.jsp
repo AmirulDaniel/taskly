@@ -14,28 +14,33 @@
 <style><%@include file="css/viewtask.css"%></style>
 </head>
 <body>
-	<nav
-		class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-		<h5 class="navbar-brand">TASKLY</h5>
+	
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div style="display: flex; align-items: center;">
+        <a href="javascript:history.back()" style="color: white; text-decoration: none; margin-right: 10px;">&#x2190;</a>
+        <h5 class="navbar-brand mb-0">TASKLY</h5>
+    </div>
+    
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown"><a
+            class="nav-link dropdown-toggle" href="#"
+            id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="bi bi-person-circle"></i> <c:out
+                    value='${userCurrent}' /></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="logout"><i
+                    class="bi bi-box-arrow-left"></i> Log Out</a>
+            </div>
+        </li>
+    </ul>
+</nav>
 
-		<ul class="navbar-nav">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#"
-				id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
-				aria-expanded="false"><i class="bi bi-person-circle"></i> <c:out
-						value='${userCurrent}' /></a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="logout"><i
-						class="bi bi-box-arrow-left"></i> Log Out</a>
-				</div></li>
-		</ul>
-	</nav>
 	<section>
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-center">
-				<h1 class="pt-5 mt-5 title">My Tasks</h1>
+				<h1 class="pt-3 mt-3 title">My Tasks</h1>
 				<form action="searchtask" method="post">
-				<div class="input-group pt-5 mt-5 search">
+				<div class="input-group pt-3 mt-3 search">
 					<span class="input-group-text" id="basic-addon1"><i
 						class="fa-solid fa-magnifying-glass"></i></span> <input type="text"
 						class="form-control" name="namesearch" placeholder="Search By Name">
@@ -131,4 +136,9 @@
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous">
 </script>
+	<script>
+	function goBack() {
+	  window.history.back();
+	}
+	</script>
 </html>

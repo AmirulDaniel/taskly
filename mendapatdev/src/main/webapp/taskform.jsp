@@ -14,27 +14,32 @@
 <style><%@include file="css/taskform.css"%></style>
 </head>
 <body>
-	<nav
-		class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-		<h5 class="navbar-brand">TASKLY</h5>
 
-		<ul class="navbar-nav">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#"
-				id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
-				aria-expanded="false"><i class="bi bi-person-circle"></i> <c:out
-						value='${userCurrent}' /></a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="logout"><i
-						class="bi bi-box-arrow-left"></i> Log Out</a>
-				</div></li>
-		</ul>
-	</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div style="display: flex; align-items: center;">
+        <a href="javascript:history.back()" style="color: white; text-decoration: none; margin-right: 10px;">&#x2190;</a>
+        <h5 class="navbar-brand mb-0">TASKLY</h5>
+    </div>
+    
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown"><a
+            class="nav-link dropdown-toggle" href="#"
+            id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="bi bi-person-circle"></i> <c:out
+                    value='${userCurrent}' /></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="logout"><i
+                    class="bi bi-box-arrow-left"></i> Log Out</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
 	<div class="container">
-		<h2>
+		<h1>
 			<c:if test="${task != null}">Edit My Task</c:if>
 			<c:if test="${task == null}">Add New Task</c:if>
-		</h2>
+		</h1>
 		<c:if test="${task != null}">
 			<form action="taskedit" method="post">
 		</c:if>
@@ -100,4 +105,9 @@
 	crossorigin="anonymous">
 	
 </script>
+	<script>
+	function goBack() {
+	  window.history.back();
+	}
+	</script>
 </html>

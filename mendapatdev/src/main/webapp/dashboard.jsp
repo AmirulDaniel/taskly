@@ -13,44 +13,47 @@
 	crossorigin="anonymous">
 <style><%@include file="css/dashboard.css"%></style>
 </head>
-	<nav
-		class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-		<h5 class="navbar-brand">TASKLY</h5>
+<body>
 
-		<ul class="navbar-nav">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#"
-				id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
-				aria-expanded="false"><i class="bi bi-person-circle"></i> <c:out value='${userCurrent}'/></a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="logout"><i class="bi bi-box-arrow-left"></i> Log Out</a>
-				</div>
-			</li>
-		</ul>
-	</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div style="display: flex; align-items: center;">
+        <h5 class="navbar-brand mb-0">TASKLY</h5>
+    </div>
+    
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown"><a
+            class="nav-link dropdown-toggle" href="#"
+            id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="bi bi-person-circle"></i> <c:out
+                    value='${userCurrent}' /></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="logout"><i
+                    class="bi bi-box-arrow-left"></i> Log Out</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
 	<section>
 		<div class="container mt-3">
 			<div class="row mt-5">
 				<div class="col-sm-4">
-					<div class="status-frame overdue shadow p-3 mb-5 bg-white rounded"
-						style="height: 300px;">
+            		<div class="status-frame shadow p-3 mb-5 bg-white rounded" style="height: 300px;">
+						<div class="status-title">Ongoing Tasks</div>
+                		<div class="status-content d-flex flex-column justify-content-center align-items-center">
+                    <span class="circle" style="background-color: #dfedf5;">
+                        <span class="number" style="color: #64aacf;"><c:out value='${ongoing.countOngoing}'/></span>
+                    </span>
+                </div>
+            </div>
+				</div>
+				<div class="col-sm-4">
+					<div class="status-frame overdue shadow p-3 mb-5 bg-white rounded" style="height: 300px;">
 						<div class="status-title">Overdue Tasks</div>
 						<div
 							class="status-content d-flex flex-column justify-content-center align-items-center">
 							<span class="circle" style="background-color: #f4a9a4;"> <span
 								class="number" style="color: #ed6e69;"><c:out value='${overdue.countOverdue}'/></span>
-							</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="status-frame overdue shadow p-3s mb-5 bg-white rounded"
-						style="height: 300px;">
-						<div class="status-title">Ongoing Tasks</div>
-						<div
-							class="status-content d-flex flex-column justify-content-center align-items-center">
-							<span class="circle" style="background-color: #dfedf5;"> <span
-								class="number" style="color: #64aacf;"><c:out value='${ongoing.countOngoing}'/></span>
 							</span>
 						</div>
 					</div>
