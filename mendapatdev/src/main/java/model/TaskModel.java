@@ -6,7 +6,9 @@ public class TaskModel {
 	protected String duedate;
 	protected String description;
 	protected int statusid;
+	protected String status;
 	protected int categoryid;
+	protected String category;
 	protected int userid;
 
 	public TaskModel() {}
@@ -18,6 +20,16 @@ public class TaskModel {
 		this.description = description;
 		this.statusid = statusid;
 		this.categoryid = categoryid;
+		this.userid = userid;
+	}
+	
+	public TaskModel(int taskid, String name, String duedate, String description, String status, String category, int userid) {
+		this.taskid = taskid;
+		this.name = name;
+		this.duedate = duedate;
+		this.description = description;
+		this.status = status;
+		this.category = category;
 		this.userid = userid;
 	}
 	
@@ -85,5 +97,21 @@ public class TaskModel {
 
 	public void setUserid(int userid) {
 		this.userid = userid;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 }

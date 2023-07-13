@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div style="display: flex; align-items: center;">
-        <a href="javascript:history.back()" style="color: white; text-decoration: none; margin-right: 10px;">&#x2190;</a>
+        <a href="main-menu" style="color: white; text-decoration: none; margin-right: 10px;">&#x2190;</a>
         <h5 class="navbar-brand mb-0">TASKLY</h5>
     </div>
     
@@ -105,9 +105,4 @@
 	crossorigin="anonymous">
 	
 </script>
-	<script>
-	function goBack() {
-	  window.history.back();
-	}
-	</script>
 </html>

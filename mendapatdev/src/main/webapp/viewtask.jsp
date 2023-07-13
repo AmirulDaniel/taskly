@@ -17,7 +17,7 @@
 	
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div style="display: flex; align-items: center;">
-        <a href="javascript:history.back()" style="color: white; text-decoration: none; margin-right: 10px;">&#x2190;</a>
+        <a href="main-menu" style="color: white; text-decoration: none; margin-right: 10px;">&#x2190;</a>
         <h5 class="navbar-brand mb-0">TASKLY</h5>
     </div>
     
@@ -79,9 +79,9 @@
 									</p>
 								</div>
 							</td>
-							<td><c:out value="${task.statusid}" /></td>
+							<td><c:out value="${task.status}" /></td>
 							<td><c:out value="${task.duedate}" /></td>
-							<td><c:out value="${task.categoryid}" /></td>
+							<td><c:out value="${task.category}" /></td>
 							<td>
 								<ul class="list-inline m-0">
 									<li class="list-inline-item"><a
@@ -136,9 +136,4 @@
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous">
 </script>
-	<script>
-	function goBack() {
-	  window.history.back();
-	}
-	</script>
 </html>

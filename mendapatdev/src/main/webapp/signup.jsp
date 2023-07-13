@@ -29,6 +29,8 @@
 						name="password" class="form-control"/>
 				</div>
 				<div class="subButton">
+					<button type="reset" class="btn btn-secondary btn-lg btn-block"
+					onclick="location.href='index.jsp';">Cancle</button> &nbsp;
 					<button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
 				</div>
 			</form>
